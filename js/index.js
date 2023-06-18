@@ -36,25 +36,13 @@ function llenarCarrito() {
             productosElegidos.push(productoElegido)
             console.table(productosElegidos)
             carritoCantidad.innerHTML = productosElegidos.length
+            localStorage.setItem("productosElegidos", JSON.stringify(productosElegidos))
         })
     }
 }
 
 function cerrarCompra() {
     const botonFinalizar = document.querySelector('button.botonFin')
-
-    if (productosElegidos.length !== 0) {
-        const totalCompra = productosElegidos.reduce((acc, productoElegido) => acc + productoElegido.precio, 0)
-        console.log("Los productos elegidos son: ")
-        console.table(productosElegidos)
-        console.log("El total de su compra es: $" + totalCompra)
-        console.log("Gracias por tu compra!")
-    } else {
-        console.log("no hay productos en el carrito!")
-    }
-
-    const containerCheckout = document.querySelector ("section.containerCheckout")
-    // containerCheckout.innerHTML = "<h3>Los productos elegidos son: </h3>"
 
     botonFinalizar.addEventListener("click", () => {
         location.href = "../pages/checkout.html"
