@@ -10,9 +10,11 @@ const container = document.getElementById('container')
 function retornoCardHTML(producto) {
     return `<div class="card">
                 <div class="imagen"><img alt= "${producto.nombre}" src= "${producto.imagen}"></div>
+                <div class="divInfoProducto">
                 <h3 class="nombre">${producto.nombre}</h3>
                 <h4 class="precio">$ ${producto.precio}</h4>
                 <div class="comprar"><button id="${producto.codigo}" class="botonCompra">Comprar</button></div>
+                </div>
             </div>`
 }
 
