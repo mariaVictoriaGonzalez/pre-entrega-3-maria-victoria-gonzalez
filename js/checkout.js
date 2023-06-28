@@ -46,7 +46,6 @@ activarBotonesEliminar()
 function imprimirSaludoFinal() {
     return `<div class="divSaludoFinal">
     <p class="parrafoSaludoFinal">Gracias por tu compra!</p>
-    <button class="volverHome" id="volverHome">Volver a la tienda.</button>
         </div>`
 }
 
@@ -57,6 +56,7 @@ function finalizarCompra() {
         localStorage.clear()
         containerCheckout.innerHTML = imprimirSaludoFinal()
         carritoCantidad.innerHTML = productosElegidos.length
+        botonFinalizarCompra.style.display = 'none'
     })
 }
 
