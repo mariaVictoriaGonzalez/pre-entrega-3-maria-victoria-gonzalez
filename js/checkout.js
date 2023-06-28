@@ -42,3 +42,22 @@ function activarBotonesEliminar() {
     }
 }
 activarBotonesEliminar()
+
+function imprimirSaludoFinal() {
+    return `<div class="divSaludoFinal">
+    <p class="parrafoSaludoFinal">Gracias por tu compra!</p>
+    <button class="volverHome" id="volverHome">Volver a la tienda.</button>
+        </div>`
+}
+
+function finalizarCompra() {
+    const botonFinalizarCompra = document.querySelector("button.botonFinalizarCompra")
+    botonFinalizarCompra.addEventListener("click", () => {
+        let productosElegidos = []
+        localStorage.clear()
+        containerCheckout.innerHTML = imprimirSaludoFinal()
+        carritoCantidad.innerHTML = productosElegidos.length
+    })
+}
+
+finalizarCompra()
